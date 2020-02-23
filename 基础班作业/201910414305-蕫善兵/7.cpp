@@ -46,12 +46,6 @@ void shuru(student* head)
 		if (head == NULL)
 			head = tmp = p;
 		else
-			tmp->next = NULL;
-			p = tmp;
-		head = p;
-		if (head == NULL)
-			head = tmp = p;
-		else
 		{
 			tmp->next = p;
 			tmp = p;
@@ -67,23 +61,16 @@ void shuru(student* head)
 student* chaxun(student* head)
 {
 	student *p = head, *tmp = NULL;
-	if (head == NULL)
-		return head;
-	else
+	while (1)
 	{
-		while (1)
+		if (p != NULL)
 		{
-			if (p != NULL)
-			{
-				tmp = p;
-				p = p->next;
-			}
-			else
-				return tmp;
+			tmp = p;
+			p=p->next;
 		}
-	}
-
-	
+		else
+			return tmp;
+	}	
 }
 void shuchu(student* head)
 {
